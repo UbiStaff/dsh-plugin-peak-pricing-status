@@ -79,18 +79,3 @@ npm test
 ## 卸载
 
 从 profile 补丁中移除本插件对应的 `insert` 条目，保留其他条目，然后重启应用与宿主。需要时再删除插件目录。
-
-## 上传 GitHub
-
-建议创建空仓库（例如 `dsh-plugin-peak-pricing-status`），将本目录内容作为仓库根目录上传，而不是只上传 ZIP。也可在本目录运行：
-
-```sh
-git init
-git add .
-git commit -m "Initial release: DeepSeek peak pricing indicator"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/dsh-plugin-peak-pricing-status.git
-git push -u origin main
-```
-
-ZIP 可附加到 GitHub Release。当前保留 `private: true` 防止误发 npm，不影响上传 GitHub。尚未选择开源许可证；公开发布前请由作者决定是否添加 LICENSE。本包未擅自指定作者身份、仓库地址或授权条款。

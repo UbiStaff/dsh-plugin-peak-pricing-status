@@ -78,18 +78,3 @@ The client cannot directly import the local algorithm module, so two implementat
 ## Uninstallation
 
 Remove this plugin's `insert` entry from your profile patch while preserving other entries, then restart the app and host. You may then delete the plugin directory.
-
-## Publishing on GitHub
-
-Create an empty repository, such as `dsh-plugin-peak-pricing-status`, and upload the contents of this directory as the repository root rather than uploading only the ZIP. Alternatively, run:
-
-```sh
-git init
-git add .
-git commit -m "Initial release: DeepSeek peak pricing indicator"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/dsh-plugin-peak-pricing-status.git
-git push -u origin main
-```
-
-The ZIP can be attached to a GitHub Release. `private: true` prevents accidental npm publication; it does not prevent GitHub uploads. No open-source license has been selected. The author should decide whether to add a LICENSE before public release; this package does not assume an author identity, repository URL, or licensing terms.
