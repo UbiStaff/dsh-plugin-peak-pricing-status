@@ -1,0 +1,33 @@
+{
+  "name": "dsh-plugin-peak-pricing-status",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Composer indicator for DeepSeek's peak/off-peak API pricing window",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/peak-window.js",
+    "peak-calendar.json",
+    "README.md",
+    "README.en.md"
+  ],
+  "dsh": {
+    "client": {
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "test": "node --test lib/*.test.js"
+  }
+}

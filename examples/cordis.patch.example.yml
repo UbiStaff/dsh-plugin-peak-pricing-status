@@ -1,0 +1,5 @@
+# Append this entry to the active profile's existing patch list.
+# 将本条目追加到当前 profile 的补丁列表，不要覆盖其他配置。
+- insert:
+    - id: peak-pricing-status
+      name: ./plugins/peak-pricing-status/lib/index.js
