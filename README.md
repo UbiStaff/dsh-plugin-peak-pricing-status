@@ -21,22 +21,27 @@
 
 ## 安装
 
-1. 下载或克隆本仓库，将完整目录放入当前 DSH profile 的 `plugins/peak-pricing-status/`。
-   macOS Desktop profile 的常见位置为：
-   ```text
-   ~/.dsh/profiles/desktop/plugins/peak-pricing-status/
-   ```
-2. **先备份**该 profile 的 `cordis.patch.yml`。在现有 YAML 列表中追加以下补丁，不要覆盖原配置，也不要重复添加相同 ID：
-   ```yaml
-   - insert:
-       - id: peak-pricing-status
-         name: ./plugins/peak-pricing-status/lib/index.js
-   ```
-   示例也见 [examples/cordis.patch.example.yml](examples/cordis.patch.example.yml)。注意：新增插件需要放在 `insert` 列表内；直接添加顶层 `- id:` 只会尝试覆盖已有条目。
-3. 使用 DSH 菜单中的 **Restart App and Host** 重启应用与宿主。
-4. 选择官方 DeepSeek 提供方，检查模型选择器左侧的圆点；切换到其他提供方时圆点应消失。
+### 通过 DSH 插件页面安装（bundle）
 
-无需 `npm install`。此包不含账户配置、API Key、个人 profile 或 DSH 本体。
+1. 打开 DSH 侧边栏的 **插件** 页面，进入安装入口。
+2. 输入本仓库的 GitHub 地址：
+   ```text
+   https://github.com/UbiStaff/dsh-plugin-peak-pricing-status
+   ```
+3. 安装并启用 bundle，按界面提示重启应用与宿主。
+4. 选择官方 DeepSeek 提供方，检查圆点及模型切换。
+
+包内的 [cordis.patch.yml](cordis.patch.yml) 自动添加插件条目，无需手工写 profile 补丁。需要网络能够访问 GitHub，并且 DSH 版本支持 bundle 安装。**本版已验证 bundle 声明及打包结构；真实 DSH 安装、启用、卸载与圆点显示尚未完成端到端验证。**
+
+### 从旧版手动安装迁移
+
+先备份 profile 配置，移除旧的 `peak-pricing-status` 手动 `insert` 条目，再通过插件页面安装。不要同时加载手动副本与 bundle，否则可能出现重复 ID 或插槽冲突。保留其他配置不变。
+
+### 手动安装（备用）
+
+下载整个仓库到当前 profile 的 `plugins/peak-pricing-status/`，将 [手动补丁示例](examples/cordis.patch.example.yml) 追加到现有 profile 补丁列表，然后重启应用与宿主。macOS Desktop 常见 profile 为 `~/.dsh/profiles/desktop/`。无需 `npm install`，不要覆盖原配置。
+
+此包不含账户配置、API Key、个人 profile 或 DSH 本体。
 
 ## 日历和时间规则
 
@@ -78,4 +83,4 @@ npm test
 
 ## 卸载
 
-从 profile 补丁中移除本插件对应的 `insert` 条目，保留其他条目，然后重启应用与宿主。需要时再删除插件目录。
+通过插件页面安装的 bundle：在同一页面禁用或卸载，并按提示重启。手动安装：移除对应的 `insert` 条目，保留其他配置，然后重启。

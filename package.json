@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-peak-pricing-status",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "type": "module",
   "description": "Composer indicator for DeepSeek's peak/off-peak API pricing window",
@@ -20,14 +20,34 @@
     "lib/peak-window.js",
     "peak-calendar.json",
     "README.md",
-    "README.en.md"
+    "README.en.md",
+    "cordis.patch.yml",
+    "CHANGELOG.md",
+    "examples/cordis.patch.example.yml"
   ],
   "dsh": {
     "client": {
       "platform": "web"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
     }
   },
   "scripts": {
     "test": "node --test lib/*.test.js"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UbiStaff/dsh-plugin-peak-pricing-status.git"
+  },
+  "homepage": "https://github.com/UbiStaff/dsh-plugin-peak-pricing-status",
+  "bugs": {
+    "url": "https://github.com/UbiStaff/dsh-plugin-peak-pricing-status/issues"
+  },
+  "keywords": [
+    "deepseek",
+    "dsh",
+    "plugin",
+    "peak-pricing"
+  ]
 }

@@ -23,21 +23,27 @@ Developed on macOS with DeepSeek Harness `0.2.0-rc.2`. Requires that version's c
 
 ## Installation
 
-1. Download or clone this repository and place the entire directory at `plugins/peak-pricing-status/` inside your active DSH profile. A common macOS Desktop profile location is:
-   ```text
-   ~/.dsh/profiles/desktop/plugins/peak-pricing-status/
-   ```
-2. **Back up** the profile's `cordis.patch.yml`. Append the following entry to its existing YAML list without replacing other configuration or duplicating the plugin ID:
-   ```yaml
-   - insert:
-       - id: peak-pricing-status
-         name: ./plugins/peak-pricing-status/lib/index.js
-   ```
-   See [examples/cordis.patch.example.yml](examples/cordis.patch.example.yml). New plugins must use `insert`; a top-level `- id:` entry only attempts to override an existing plugin.
-3. Choose **Restart App and Host** in DSH.
-4. Select an official DeepSeek provider and check for the dot to the left of the model selector. It should disappear when you switch to another provider.
+### Install through the DSH Plugins page (bundle)
 
-No `npm install` is required. This package contains no account credentials, API keys, personal profile configuration, or DSH application code.
+1. Open **Plugins** in the DSH sidebar and choose the installation entry.
+2. Enter this GitHub repository address:
+   ```text
+   https://github.com/UbiStaff/dsh-plugin-peak-pricing-status
+   ```
+3. Install and enable the bundle, then restart the app and host when prompted.
+4. Select an official DeepSeek provider and check the indicator and model switching.
+
+The included [cordis.patch.yml](cordis.patch.yml) adds the plugin automatically; no manual profile patch is needed. GitHub must be reachable and your DSH version must support bundle installation. **Bundle metadata and packed contents have been checked; actual DSH installation, activation, removal, and indicator visibility have not been end-to-end verified.**
+
+### Migrate from a manual installation
+
+Back up your profile configuration and remove the old manual `peak-pricing-status` insert entry before installing the bundle. Do not load both copies: duplicate IDs or slot conflicts may occur. Preserve unrelated configuration.
+
+### Manual installation (fallback)
+
+Download the entire repository to `plugins/peak-pricing-status/` in your active profile, append the [manual patch example](examples/cordis.patch.example.yml) to your existing profile patch, then restart the app and host. A common macOS Desktop profile is `~/.dsh/profiles/desktop/`. No `npm install` is needed; do not replace existing configuration.
+
+This package contains no account credentials, API keys, personal profile configuration, or DSH application code.
 
 ## Calendar and time rules
 
@@ -77,4 +83,4 @@ The client cannot directly import the local algorithm module, so two implementat
 
 ## Uninstallation
 
-Remove this plugin's `insert` entry from your profile patch while preserving other entries, then restart the app and host. You may then delete the plugin directory.
+For a bundle installation, disable or remove it from the Plugins page and restart when prompted. For a manual installation, remove its insert entry while preserving other configuration, then restart.

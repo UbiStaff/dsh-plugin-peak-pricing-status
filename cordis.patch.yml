@@ -1,0 +1,4 @@
+# Package-owned bundle layer; paths are relative to this file.
+- insert:
+    - id: peak-pricing-status
+      name: ./lib/index.js

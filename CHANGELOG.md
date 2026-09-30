@@ -1,5 +1,12 @@
 # Changelog / 更新记录
 
+## 1.0.2
+
+- 添加 `dsh.bundle.patch` 声明及包内装载补丁，支持插件管理器识别 bundle。
+- 更新中英文安装、旧版迁移与卸载说明，补充仓库元数据和打包文件清单。
+- Add bundle metadata and a package-owned loading patch; update bilingual installation, migration and removal instructions.
+- 实际 DSH 安装和界面显示仍待验证 / Live DSH installation and UI visibility remain unverified.
+
 ## 1.0.1
 
 ### 简体中文
