@@ -1,5 +1,11 @@
 # Changelog / 更新记录
 
+## 1.0.3
+
+- README 增加空闲时段截图（圆点特写与悬停提示），中英文各一份说明。
+- Add off-peak screenshots (dot close-up and hover tooltip) to both READMEs.
+- 仅文档与打包清单变更，插件代码未改。 / Documentation and packaging only; plugin code unchanged.
+
 ## 1.0.2
 
 - 添加 `dsh.bundle.patch` 声明及包内装载补丁，支持插件管理器识别 bundle。

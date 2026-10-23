@@ -15,7 +15,17 @@ A lightweight peak/off-peak indicator for **DeepSeek Harness (DSH)**. A small do
 - Subscribes to the `modelSelection` projection and uses the additive `conversation.input.right` slot. Does not replace the model selector.
 - No additional npm runtime dependencies or build step. React is supplied by the DSH client.
 
-The current indicator's tooltip text is in Chinese. These bilingual READMEs do not add an English UI translation.
+## Screenshots
+
+Off-peak: the pale green dot to the left of the model selector.
+
+![Pale green off-peak dot beside the model selector](docs/idle-dot.png)
+
+Hover for the decision basis, current Beijing time, peak windows, and the next transition.
+
+![Off-peak tooltip on hover](docs/idle-tooltip.png)
+
+These are real captures from the macOS app. The interface text is currently Chinese only.
 
 ## Compatibility
 

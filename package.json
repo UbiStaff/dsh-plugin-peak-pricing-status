@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-peak-pricing-status",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "type": "module",
   "description": "Composer indicator for DeepSeek's peak/off-peak API pricing window",
@@ -23,7 +23,9 @@
     "README.en.md",
     "cordis.patch.yml",
     "CHANGELOG.md",
-    "examples/cordis.patch.example.yml"
+    "examples/cordis.patch.example.yml",
+    "docs/idle-dot.png",
+    "docs/idle-tooltip.png"
   ],
   "dsh": {
     "client": {
