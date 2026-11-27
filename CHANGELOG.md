@@ -1,5 +1,15 @@
 # Changelog / 更新记录
 
+## 1.0.4
+
+- 修复 DSH 0.2.2 起悬停提示位置错乱：新版给输入框底栏加了 `container-type: inline-size`，使 `position: fixed` 后代改以底栏为包含块；提示框现渲染到 `document.body` 的 portal，并按实测尺寸夹取到视口内。
+- 无 portal 时保留自校正：把实际绘制框与目标位置的差补回坐标。
+- 新增 portal 与 `top` 坐标回归测试；行为开关的兜底路径保持可用。
+- Fix misplaced hover tooltip on DSH 0.2.2+: the composer toolbar is now an `inline-size` container, so it became the containing block for fixed-position descendants. The bubble now renders through a portal on `document.body` and is clamped with its measured size.
+- Keep a self-correcting fallback that offsets the painted box when no portal is available.
+- Add regression coverage for the portal target and viewport `top` coordinates.
+- 自动化测试通过；实际界面待刷新确认 / Automated tests pass; live UI still needs a refresh check.
+
 ## 1.0.3
 
 - README 增加空闲时段截图（圆点特写与悬停提示），中英文各一份说明。

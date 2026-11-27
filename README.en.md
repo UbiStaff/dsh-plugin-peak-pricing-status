@@ -29,7 +29,9 @@ These are real captures from the macOS app. The interface text is currently Chin
 
 ## Compatibility
 
-Developed on macOS with DeepSeek Harness `0.2.0-rc.2`. Requires that version's client plugin, Session projection, and slot APIs; other versions have not been verified. Provider detection uses an explicit ID allowlist and does not validate the actual endpoint behind a custom provider.
+Developed on macOS and adapted for DeepSeek Harness `0.2.2-rc.5`. Requires its client plugin, Session projection, and slot APIs; older releases such as `0.2.0-rc.2` are no longer regression-tested. Provider detection uses an explicit ID allowlist and does not validate the actual endpoint behind a custom provider.
+
+The tooltip renders through a portal on `document.body`. Newer DSH releases give the composer toolbar `container-type: inline-size`, which makes it the containing block for fixed-position descendants; the portal keeps the bubble anchored to the viewport. Without a portal the placement pass still corrects itself against the painted box.
 
 ## Installation
 

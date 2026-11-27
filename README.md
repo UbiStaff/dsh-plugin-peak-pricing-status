@@ -29,7 +29,9 @@
 
 ## 兼容性
 
-在 macOS 上的 DeepSeek Harness `0.2.0-rc.2` 环境开发。依赖该版本的客户端插件、Session 投影和插槽 API；其他版本尚未验证。提供方 ID 为显式白名单，不验证自定义提供方背后的实际请求地址。
+在 macOS 上开发，并在 DeepSeek Harness `0.2.2-rc.5` 上适配。依赖客户端插件、Session 投影和插槽 API；更早版本（如 `0.2.0-rc.2`）未再回归验证。提供方 ID 为显式白名单，不验证自定义提供方背后的实际请求地址。
+
+提示框渲染到 `document.body` 的 portal 中。新版 DSH 给输入框底栏加了 `container-type: inline-size`，会让它成为 `position: fixed` 后代的包含块；portal 避免提示位置随底栏偏移或被层级裁剪。没有 portal 时仍按实测框体自校正位置。
 
 ## 安装
 
